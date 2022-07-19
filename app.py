@@ -13,7 +13,8 @@ app = Flask(__name__)
 # ‘/’ URL is bound with hello_world() function.
 def welcome():
 	if request.method == 'POST':
-		sub = request.form.get("button")
+		sub = request.form.get('start')
+		# print(sub)
 		if sub == 'submit':
 			return redirect(url_for('Level_1'))
 	return render_template('welcome.html')
