@@ -12,6 +12,10 @@ app = Flask(__name__)
 @app.route('/', methods = ["GET", "POST"])
 # ‘/’ URL is bound with hello_world() function.
 def welcome():
+	if request.method == 'POST':
+		sub = request.form.get("button")
+		if sub == 'submit':
+			return redirect(url_for('Level_1'))
 	return render_template('welcome.html')
 
 @app.route('/Level_1', methods = ["GET", "POST"])
