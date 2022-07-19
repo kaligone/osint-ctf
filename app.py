@@ -12,6 +12,11 @@ app = Flask(__name__)
 @app.route('/', methods = ["GET", "POST"])
 # ‘/’ URL is bound with hello_world() function.
 def welcome():
+	if request.method == 'POST':
+		sub = request.form.get('start')
+		# print(sub)
+		if sub == 'submit':
+			return redirect(url_for('Level_1'))
 	return render_template('welcome.html')
 
 @app.route('/Level_1', methods = ["GET", "POST"])
@@ -76,4 +81,4 @@ if __name__ == '__main__':
 	app.config['SECRET_KEY']='osintctf'
 	#port = int(os.environ.get('PORT', 33507))
 	#waitress.serve(app, port=port)
-	app.run(debug=False)
+	app.run(debug=True)
