@@ -1,15 +1,21 @@
 {
-  "version": 2,
-  "builds": [
-      {
-          "src": "*.py",
-          "use": "@liudonghua123/now-flask"
+  "name": "OSINT-CTF",
+  "description": "A OSINT-CTF challenge app",
+  "image": "",
+  "repository": "https://github.com/kaligone/osint-ctf.git",
+  "keywords": ["python", "flask" ],
+  "env": {
+    "SECRET_KEY": {
+      "description": "ctfTreasure",
+      "generator": "secret"
+    }
+  },
+  "environments": {
+    "test": {
+      "scripts": {
+        "test-setup": "python app.py collectstatic --noinput",
+        "test": "python app.py test"
       }
-  ],
-  "routes": [
-      {
-          "src": "(.*)",
-          "dest": "app.py"
-      }
-  ]
+    }
+  }
 }
