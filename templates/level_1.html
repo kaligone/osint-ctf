@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Level 1 - OSINT CTF</title>
+    <link type="text/css" rel="stylesheet" href="static/css/l1.css">
+  </head>
+  <body>
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        <script>
+          var messages = {{ messages | safe }};
+          for (var i=0; i<messages.length; i++) {
+            alert(messages[i]);
+          }
+        </script>
+      {% endif %}
+
+      {% if error %}
+        <script>
+          var messages = {{ messages | safe }};
+          for (var i=0; i<messages.length; i++) {
+            alert(messages[i]);
+          }
+        </script>
+      {% endif %}
+    {% endwith %}
+
+    <!-- <a href="/images/myw3schoolsimage.jpg" download>
+  <img src="/images/myw3schoolsimage.jpg" alt="W3Schools" width="104" height="142"> -->
+  <div class="level1">
+    <p class="level1-1">Level 1 : Find the place</p>
+    <p class="level1-2">
+        Last year I visited a place which is best known for its beautiful beaches. I clicked some pictures there
+        But I forgot the name of the place can you find which place I went to?
+    </p>
+
+    <p class="link">
+      Resource(<a class="link-util" href="static/country.jpg" download>File/url</a>)
+    </p>
+    <p style="color:red">NOTE : xxxxxx will replaced by place name in all small letters</p>
+    <br>
+    <form action="{{ url_for("Level_1")}}" method="POST">
+      <label class="flag_in" for="flag_in">Flag : </label>
+      <input class="flag" type="text" name="flag" placeholder="OSINT.ctf{xxxxxx}" autocomplete="off">
+      <button class="flag_check" type="submit" name="button">Submit</button>
+    </form>
+  </div>
+  <p class="auth">Author : W!vOL3r</p>
+
+  </body>
+</html>

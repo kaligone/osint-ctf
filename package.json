@@ -1,0 +1,21 @@
+{
+  "name": "OSINT-CTF",
+  "description": "A OSINT-CTF challenge app",
+  "image": "",
+  "repository": "https://github.com/kaligone/osint-ctf.git",
+  "keywords": ["python", "flask" ],
+  "env": {
+    "SECRET_KEY": {
+      "description": app.config['SECRET_KEY']='ctfTreasure',
+      "generator": "secret"
+    }
+  },
+  "environments": {
+    "test": {
+      "scripts": {
+        "test-setup": "python app.py collectstatic --noinput",
+        "test": "python app.py test"
+      }
+    }
+  }
+}

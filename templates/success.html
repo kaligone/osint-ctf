@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Congrats - OSINT ctf</title>
+    <link type="text/css" rel="stylesheet" href="static/css/s.css">
+  </head>
+  <body>
+
+        {% with messages = get_flashed_messages() %}
+          {% if messages %}
+            <script>
+              var messages = {{ messages | safe }};
+              for (var i=0; i<messages.length; i++) {
+                alert(messages[i]);
+              }
+            </script>
+          {% endif %}
+
+          {% if error %}
+            <script>
+              var messages = {{ messages | safe }};
+              for (var i=0; i<messages.length; i++) {
+                alert(messages[i]);
+              }
+            </script>
+          {% endif %}
+        {% endwith %}
+        <h1 class="h1">Congrats !! You completed the OSINT CTF </h1>
+        <p class="auth">Author : W!vOL3r</p>
+        <div class="ag-format-container">
+           <div class="ag-winner_fox-box">
+             <div class="ag-winner_confetti-wrap">
+               <div class="ag-winner_confetti"></div>
+               <div class="ag-winner_confetti"></div>
+               <div class="ag-winner_confetti"></div>
+               <div class="ag-winner_confetti"></div>
+               <div class="ag-winner_confetti"></div>
+               <div class="ag-winner_confetti"></div>
+               <div class="ag-winner_confetti"></div>
+             </div>
+             <div class="ag-winner_fox"></div>
+           </div>
+         </div>
+  </body>
+</html>

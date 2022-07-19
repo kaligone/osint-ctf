@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Level-3 Treasure CTF</title>
+    <link type="text/css" rel="stylesheet" href="static/css/final.css">
+  </head>
+  <body >
+
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        <script>
+          var messages = {{ messages | safe }};
+          for (var i=0; i<messages.length; i++) {
+            alert(messages[i]);
+          }
+        </script>
+      {% endif %}
+
+      {% if error %}
+        <script>
+          var messages = {{ messages | safe }};
+          for (var i=0; i<messages.length; i++) {
+            alert(messages[i]);
+          }
+        </script>
+      {% endif %}
+    {% endwith %}
+
+    <div class="level1">
+      <p class="level1-1">Final : OSINT</p>
+      <p class="level1-2">A irish turnip.. Answer where it is located?</p>
+      <img src="static/final.jpg" alt=""><br>
+      <br>
+      <form action="{{ url_for("final")}}" method="POST">
+        <label class="flag_in" for="flag_in">Flag : </label>
+        <input class="flag3" type="text" name="flag4" value="" placeholder="flag{xxxxxxxx.xxxxxx.xxxxxxx}" autocomplete="off">
+        <button class="flag_check" type="submit" name="button">Submit</button>
+      </form>
+    </div>
+
+  <p class="auth">Author : W!vOL3r</p>
+  </body>
+</html>

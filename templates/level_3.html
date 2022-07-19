@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Level 3 - OSINT CTF</title>
+    <link type="text/css" rel="stylesheet" href="static/css/l3.css">
+  </head>
+  <body>
+
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        <script>
+          var messages = {{ messages | safe }};
+          for (var i=0; i<messages.length; i++) {
+            alert(messages[i]);
+          }
+        </script>
+      {% endif %}
+
+      {% if error %}
+        <script>
+          var messages = {{ messages | safe }};
+          for (var i=0; i<messages.length; i++) {
+            alert(messages[i]);
+          }
+        </script>
+      {% endif %}
+    {% endwith %}
+    <p hidden>No flag here... Find me somewhere else </p>
+    <div class="level1">
+      <p class="level1-1">Level-3 : Find me</p>
+      <p class="level1-2">
+          My name is derived from a fictional character in a popular Japanese comic book and cartoon series. I have ability to take control of your systems
+          and earn a hefty amount of money to become a millionaire or may be billionaire. Who am I?
+      </p>
+      <br>
+      <form action="{{ url_for("Level_3")}}" method="POST">
+        <label class="flag_in" for="flag_in">Flag : </label>
+        <input class="flag3" type="text" name="flag3" value="" placeholder="OSINT.ctf{xxxx}" autocomplete="off">
+        <button class="flag_check" type="submit" name="button">Submit</button>
+      </form>
+    </div>
+
+  <p class="auth">Author : W!vOL3r</p>
+  </body>
+</html>

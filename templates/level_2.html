@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Level 2  - OSINT CTF</title>
+    <link type="text/css" rel="stylesheet" href="static/css/l2.css">
+  </head>
+  <body>
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        <script>
+          var messages = {{ messages | safe }};
+          for (var i=0; i<messages.length; i++) {
+            alert(messages[i]);
+          }
+        </script>
+      {% endif %}
+
+      {% if error %}
+        <script>
+          var messages = {{ messages | safe }};
+          for (var i=0; i<messages.length; i++) {
+            alert(messages[i]);
+          }
+        </script>
+      {% endif %}
+    {% endwith %}
+
+    <div class="level1">
+      <p class="level1-1">Level 2 : Orbiter</p>
+      <p class="level1-2">
+          How far away from earth was the MOM on 5 Feb 2014 and what was its speed at that time?
+          Enter the distance and speed without the units. (eg. OSINT.ctf{distance.speed})
+      </p>
+      <br><br>
+      <form action="{{ url_for("Level_2")}}" method="POST">
+        <label class="flag_in" for="flag_in">Flag : </label>
+        <input class="flag2" type="text" name="flag2"  placeholder="OSINT.ctf{xx.y.xx.y}" autocomplete="off">
+        <button class="flag_check" type="submit" name="button">Submit</button>
+      </form>
+    </div>
+    <p class="auth">Author : W!vOL3r</p>
+  </body>
+</html>
+
+
+<!-- how far is magalyan from earth on 15 august 2017
+mom full form in space
+https://www.pressreader.com/
+when was mangalyaan launched
+ -->
