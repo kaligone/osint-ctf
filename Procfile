@@ -1,1 +1,1 @@
-web: gunicorn --bind 0.0.0.0:8080 osint-ctf:app
+web: gunicorn --bind 0.0.0.0:$PORT osint-ctf:app
