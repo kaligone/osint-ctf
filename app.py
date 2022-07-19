@@ -74,6 +74,6 @@ def success():
 # main driver function
 if __name__ == '__main__':
 	app.config['SECRET_KEY']='osintctf'
-	#port = int(os.environ.get('PORT', 33507))
-	#waitress.serve(app, port=port)
+	port = int(os.environ.get('PORT', 8080))
+	waitress.serve(app, port=port)
 	app.run(debug=False)
