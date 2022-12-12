@@ -1,16 +1,9 @@
 *************************************OSINT CTF******************************************
 OSINT CTF consit of 4 levels based on different difficulty levels
 
-
-
 ***********************************Development******************************************
 The entire CTF is created by using the FLASK framework in python , HTML and CSS
 And run on the local server
-
-*****************************Access CTF via link****************************************
-CTF is also hosted on the link : https://osint-ctf.herokuapp.com/
-
-
 
 **********************************How to PLay CTF***************************************
 
@@ -28,3 +21,6 @@ the in cmd type
 C:\Users\Desktop\OSINT-CTF> python3 app.py and it will run the local server 
 then go to the url shown like http://127.0.0.1:5000/
 and start solving
+
+
+*******************************************ACCESS THE CTF Writeups added above********************************
